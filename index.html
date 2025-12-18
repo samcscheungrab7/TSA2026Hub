@@ -1,79 +1,14 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<title>Home Page</title>
-<br>
 <head>
     <meta charset="UTF-8">
-    <title>Top Menu Bar</title>
+    <title>Community Resource Hub</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-			background-color: #ffe4e1;
-        }
-
-        
-        .navbar {
-            background-color: #7A5C58;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        
-        .navbar a {
-            float: left;
-            color: #FFEDFB;
-            text-align: center;
-            padding: 25px 29px;
-			font-size: 18px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: hotpink;
-        }
-		{
-            padding-top: 60px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="navbar">
-        <a href="index.html">Home</a>
-    </div>
-	
-<br><br><br><br>
-
-<br>
-<font size=+6 class="shadow-heading"><b><center>Welcome To Your Community Resource Hub!</center></font></b>
-<br><br>
-<div style="padding: 0 60px; text-align: center; line-height: 1.6;">
-  <p><b>
-    Whether you’re looking for assistance, guidance, or ways to get involved, this site brings trusted local resources together in one easy-to-navigate space.
-    Our goal is to make finding help simpler, strengthen community connections, and ensure everyone knows where to turn when they need it most.
-    Search the programs nearby through our interactive directory, view some community highlights in the “Community Resource Highlights” page, or request a new community resource in the “Suggest a New Community Resource” page.
-    Whether you’re looking for assistance, guidance, or ways to get involved, this site brings trusted local resources together in one easy-to-navigate space. Our goal is to make finding help simpler, strengthen community connections, and ensure everyone knows where to turn when they need it most.
-  </p></b>
-</div>
-<br><br>
-<style>
-
-.shadow-heading {
-  font-size: 48px;
-  color: #000000;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-}
-</style>
-
-
-   <style>
-        body {
-            font-family: Arial, sans-serif;
+            font-family: "Georgia", serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
+            background: linear-gradient(135deg, #f3efe9, #e6dccf);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -83,27 +18,71 @@
         .container {
             text-align: center;
             background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            padding: 60px 50px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
             width: 90%;
         }
 
         h1 {
+            font-size: 2.6rem;
             margin-bottom: 20px;
-            color: #333;
+            color: #3b2f2f;
         }
 
         p {
-            color: #555;
-            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #5a4a42;
+            margin-bottom: 45px;
+            line-height: 1.6;
         }
 
         .button-group {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            gap: 30px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            width: 240px;
+            background-color: #3b2f2f;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
+
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: #3b2f2f transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
 
         .button-group a {
@@ -112,18 +91,32 @@
 
         .button-group button {
             width: 100%;
-            padding: 15px;
-            font-size: 16px;
+            padding: 24px;
+            font-size: 1.2rem;
+            font-weight: 600;
             border: none;
-            border-radius: 8px;
+            border-radius: 14px;
             cursor: pointer;
-            background-color: #2c6bed;
+            background: linear-gradient(135deg, #8b5e3c, #6f4528);
             color: #ffffff;
-            transition: background-color 0.3s ease;
+            box-shadow: 0 6px 15px rgba(139, 94, 60, 0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
         }
 
         .button-group button:hover {
-            background-color: #1f52b8;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(139, 94, 60, 0.5);
+            background: linear-gradient(135deg, #9c6a44, #7b4b2b);
+        }
+
+        @media (max-width: 600px) {
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+
+            .tooltip-text {
+                width: 200px;
+            }
         }
     </style>
 </head>
@@ -131,18 +124,48 @@
     <div class="container">
         <h1>Welcome to the Community Resource Hub</h1>
         <p>
-            Explore programs, discover local organizations, and find helpful resources
-            available in your community.
+            Your central place to discover non-profits, programs, events,
+            and essential resources available in your community.
         </p>
 
         <div class="button-group">
-            <a href="directory.html"><button>Find Resources</button></a>
-            <a href="highlights.html"><button>Community Highlights</button></a>
-            <a href="events.html"><button>Upcoming Events</button></a>
-            <a href="suggest.html"><button>Suggest a Resource</button></a>
+            <div class="tooltip">
+                <a href="directory.html">
+                    <button>Find Resources</button>
+                </a>
+                <div class="tooltip-text">
+                    Browse local non-profits, programs, and services available near you.
+                </div>
+            </div>
+
+            <div class="tooltip">
+                <a href="highlights.html">
+                    <button>Community Highlights</button>
+                </a>
+                <div class="tooltip-text">
+                    Learn about featured organizations, success stories, and community impact.
+                </div>
+            </div>
+
+            <div class="tooltip">
+                <a href="events.html">
+                    <button>Upcoming Events</button>
+                </a>
+                <div class="tooltip-text">
+                    View workshops, fundraisers, and events happening in your community.
+                </div>
+            </div>
+
+            <div class="tooltip">
+                <a href="suggest.html">
+                    <button>Suggest a Resource</button>
+                </a>
+                <div class="tooltip-text">
+                    Recommend a non-profit, program, or service to be added to the hub.
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
 
