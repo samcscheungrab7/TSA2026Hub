@@ -1,108 +1,142 @@
-<html>
-
-<head><title>Food Services</title></head>
-
-<body style="background-color: #ffe4e1; text=black">
-<br>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Top Menu Bar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        
-        .navbar {
-            background-color: #7A5C58;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        
-        .navbar a {
-            float: left;
-            color: #FFEDFB;
-            text-align: center;
-            padding: 25px 29px;
-			font-size: 18px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: hotpink;
-        }
-		{
-            padding-top: 60px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#ID">South Central Community Action Programs</a>
-        <a href="#CRH">The Gleaning Project</a>
-		<a href="#ox">Oxfam America</a>
-    </div>
-	
-<br><br><br>
-
-<br><br>
-
-<font size=+6 class="shadow-heading"><b><center>Food Services</center></font></b>
+<meta charset="UTF-8">
+<title>Food Services</title>
 
 <style>
-.shadow-heading {
-  font-size: 48px;
-  color: #000000;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-}
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: linear-gradient(135deg, #f3efe9, #e6dccf);
+        color: #3b2f2f;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #6f4528;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    .navbar a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 22px 26px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background-color: #8b5e3c;
+    }
+
+    /* Page content spacing */
+    .content {
+        padding-top: 110px;
+        width: 85%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    h2 a {
+        color: #6f4528;
+        text-decoration: none;
+    }
+
+    h2 a:hover {
+        text-decoration: underline;
+    }
+
+    h3 {
+        font-weight: normal;
+        color: #5a4a42;
+        line-height: 1.6;
+        max-width: 900px;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: #cbb8a9;
+        margin: 60px 0;
+    }
+
+    img {
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 </style>
+</head>
 
+<body>
 
-
-<br><br><a name="ID"></a><hr>
-<br><br>
-<h2><center><img src="sccap.png" width=350 height=150 vspace=10 hspace=50 align=left>
-<br>	<div style="padding-left: 60px; padding-right: 40px;">
-<a href="https://www.sccap.org/">South Central Community Action Programs</a><br></h2></center>
-<h3><center>We are a Community Action Agency providing services such as food pantries, fresh produce, shelters, WIC, child care subsidy and Weatherization.<br><br>
-</center></div></h3><br><br><br>
-
-<a name="CRH"></a><br><hr><br><br>
-<h2><center><img src="glean.jpeg" width=300 height=200 vspace=10 hspace=50 align=right>
-	<div style="padding-left: 60px; padding-right: 40px;"><br><br>
-<a href="https://thegleaningproject.org/">The Gleaning Project</a><br></h2></center>
-<h3><center>The Gleaning Project is South Central Pennsylvania's collaborative, nonprofit effort to reduce food loss on local farms, and increase food security
- in our communities.<br>
-</center></h3><br>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#ID">South Central Community Action</a>
+    <a href="#CRH">The Gleaning Project</a>
+    <a href="#ox">Oxfam America</a>
 </div>
-<br><br><br><br><br>
-<br><br><hr>
-<br>
 
+<div class="content">
 
-	
-<a name="ox"></a><br>
-<h2><center><img src="oxfam.jpeg" width=200 height=200 vspace=10 hspace=50 align=left>
-	<div style="padding-left: 60px; padding-right: 40px;"><br><br>
-<a href="https://give.oxfamamerica.org/page/90183/donate/1?en_txn6=match&en_txn7=nonbrand&en_txn8=fy26-eoy3xpaidmatch&en_txn10=bs1_bing_revenue_fy26q1search_purchases_20250516_nonbrand-kywd_brand_us_18o_a_phrase-text_eoysearch_eoy_match&utm_medium=paidsearch&utm_campaign=bs1_bing_revenue_fy26q1search_purchases_20250516_nonbrand&utm_source=bing&transaction.recurrpay=N&msclkid=f5de42dc02511cc65f592b9f4a3179d6&utm_term=donate&utm_content=kywd_nonbrand_us_18o_a_phrase">Oxfam America</a><br></h2></center>
-<h3><center>Humanitarian needs are rising. Make a tripled gift to help provide 
-	food and clean water. We're providing lifesaving relief for families experiencing injustice. Rush a donation.<br>
-</center></h3><br><br>
-</div>
-<br><br><br><br><br>
+<h1>Food Services</h1>
+
+<a name="ID"></a>
 <hr>
-<br><br><br>
+
+<h2>
+    <img src="sccap.png" width="350" height="150" align="left" hspace="40">
+    <a href="https://www.sccap.org/">South Central Community Action Programs</a>
+</h2>
+<h3>
+    We are a Community Action Agency providing services such as food pantries,
+    fresh produce, shelters, WIC, child care subsidies, and weatherization.
+</h3>
+<br clear="left">
+
+<a name="CRH"></a>
+<hr>
+
+<h2>
+    <img src="glean.jpeg" width="300" height="200" align="right" hspace="40">
+    <a href="https://thegleaningproject.org/">The Gleaning Project</a>
+</h2>
+<h3>
+    South Central Pennsylvania’s collaborative nonprofit effort to reduce food
+    loss on local farms while increasing food security in our communities.
+</h3>
+<br clear="right">
+
+<a name="ox"></a>
+<hr>
+
+<h2>
+    <img src="oxfam.jpeg" width="200" height="200" align="left" hspace="40">
+    <a href="https://give.oxfamamerica.org/">Oxfam America</a>
+</h2>
+<h3>
+    Humanitarian needs are rising. Your support helps provide food, clean water,
+    and lifesaving relief to families facing injustice around the world.
+</h3>
+<br clear="left">
+<br><br><hr><br><br>
+</div>
+
 </body>
-
 </html>
-
-
 
 
 
