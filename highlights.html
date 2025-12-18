@@ -1,9 +1,9 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Community Resource Highlights</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: "Georgia", serif;
@@ -12,8 +12,8 @@
             background: linear-gradient(135deg, #f3efe9, #e6dccf);
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
@@ -24,36 +24,30 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             max-width: 700px;
             width: 90%;
-            margin: 80px 0 40px 0;
         }
 
         h1 {
             font-size: 2.6rem;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #3b2f2f;
         }
 
-        #resourceList {
+        p {
+            font-size: 1.1rem;
+            color: #5a4a42;
+            margin-bottom: 45px;
+            line-height: 1.6;
+        }
+
+        .button-group {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 30px;
         }
 
-        .resource-card {
-            background: linear-gradient(135deg, #8b5e3c, #6f4528);
-            padding: 24px;
-            border-radius: 14px;
-            box-shadow: 0 6px 15px rgba(139,94,60,0.4);
-            text-align: center;
+        .tooltip {
             position: relative;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-            cursor: pointer;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .resource-card h3 {
-            margin-bottom: 12px;
+            display: inline-block;
         }
 
         .tooltip-text {
@@ -69,7 +63,7 @@
             bottom: 120%;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             font-size: 0.95rem;
             line-height: 1.4;
             transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -87,31 +81,40 @@
             border-color: #3b2f2f transparent transparent transparent;
         }
 
-        .resource-card:hover .tooltip-text {
+        .tooltip:hover .tooltip-text {
             visibility: visible;
             opacity: 1;
         }
 
-        .resource-card:hover {
+        .button-group a {
+            text-decoration: none;
+        }
+
+        .button-group button {
+            width: 100%;
+            padding: 24px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #8b5e3c, #6f4528);
+            color: #ffffff;
+            box-shadow: 0 6px 15px rgba(139, 94, 60, 0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .button-group button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(139,94,60,0.5);
+            box-shadow: 0 10px 25px rgba(139, 94, 60, 0.5);
             background: linear-gradient(135deg, #9c6a44, #7b4b2b);
         }
 
-        /* Make entire card clickable without showing link text */
-        .resource-card a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            text-indent: -9999px;
-        }
-
-        @media (max-width: 800px) {
-            #resourceList {
+        @media (max-width: 600px) {
+            .button-group {
                 grid-template-columns: 1fr;
             }
+
             .tooltip-text {
                 width: 200px;
             }
@@ -120,35 +123,49 @@
 </head>
 <body>
     <div class="container">
-        <h1>Community Resource Highlights</h1><br>
-        <div id="resourceList">
-            <div class="resource-card">
-                <h3>YWCA Hanover Safe Home</h3>
-                <div class="tooltip-text">If you are in any type of danger at all, come here to seek help.</div>
-                <a href="CommunityHuman.html" target="_blank"></a>
+        <h1>Community Resource Highlights</h1>
+        <p>
+            Click here to view some of important highlights in the community
+        </p>
+
+        <div class="button-group">
+            <div class="tooltip">
+                <a href="CommunityHuman.html">
+                    <button>YWCA Hanover Safehouse</button>
+                </a>
+                <div class="tooltip-text">
+                   If you are in any type of danger at all, come here to seek help.
+                </div>
             </div>
 
-            <div class="resource-card">
-                <h3>Religion</h3>
-                <div class="tooltip-text">If you are looking for religious services, visit our Human Services / Community Support.</div>
-                <a href="CommunityHuman.html" target="_blank"></a>
+            <div class="tooltip">
+                <a href="CommunityHuman.html">
+                    <button>Religion</button>
+                </a>
+                <div class="tooltip-text">
+            If you are looking for religious services, visit our Human Services / Community Support.
             </div>
 
-            <div class="resource-card">
-                <h3>Mental Health Struggles</h3>
-                <div class="tooltip-text">If you struggle with your mental health, click here to talk to somebody and get help.</div>
-                <a href="MHSupport.html" target="_blank"></a>
+            <div class="tooltip">
+                <a href="MHSupport.html">
+                    <button>Mental Health Struggles</button>
+                </a>
+                <div class="tooltip-text">
+            If you struggle with your mental health, click here to talk to somebody and get help. 
             </div>
 
-            <div class="resource-card">
-                <h3>Non-Profit Grants?</h3>
-                <div class="tooltip-text">If you are looking for a grant to help with your non-profit, click here!</div>
-                <a href="https://www.instrumentl.com/browse-grants/adams-county-pa" target="_blank"></a>
+            <div class="tooltip">
+                <a href="https://www.instrumentl.com/browse-grants/adams-county-pa">
+                    <button>Non-Profit Grants?</button>
+                </a>
+                <div class="tooltip-text">If you are looking for a grant to help with your non-profit, click here!
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
 
 
 
