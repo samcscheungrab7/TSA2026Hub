@@ -9,7 +9,7 @@
             font-family: "Georgia", serif;
             margin: 0;
             padding: 0;
-            background: #ffe4e1; /* light pink background */
+            background: linear-gradient(135deg, #f3efe9, #e6dccf); /* homepage gradient */
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -39,22 +39,6 @@
             color: #5a4a42; /* lighter brown */
         }
 
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .search-bar input, .search-bar select {
-            padding: 10px;
-            font-size: 1rem;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-
         #resourceList {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -67,26 +51,57 @@
             border-radius: 14px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             text-align: center;
+            position: relative;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            cursor: pointer;
         }
 
         .resource h2 a {
             text-decoration: none;
-            color: #fff; /* white text */
+            color: #fff;
             font-size: 1.3rem;
         }
 
-        .resource p {
-            color: #ffe4e1; /* light pink text */
-            font-size: 1rem;
-            line-height: 1.5;
-            margin-top: 10px;
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            width: 250px;
+            background-color: #3b2f2f; /* dark brown */
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
+
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: #3b2f2f transparent transparent transparent;
+        }
+
+        .resource:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
 
         .resource:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #9c6a44, #7b4b2b); /* slightly lighter on hover */
+            background: linear-gradient(135deg, #9c6a44, #7b4b2b); /* lighter brown hover */
         }
 
         @media (max-width: 800px) {
@@ -99,81 +114,45 @@
 <body>
     <div class="container">
         <h1>Interactive Directory</h1>
-        <h4>Search Programs Here</h4>
-
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search resources..." onkeyup="filterResources()">
-            <select id="categoryFilter" onchange="filterResources()">
-                <option value="">All Categories</option>
-                <option value="Grants">Grants</option>
-                <option value="Food">Food</option>
-                <option value="Support">Human Support</option>
-                <option value="Youth">Youth/Senior</option>
-                <option value="Housing">Housing</option>
-                <option value="MH">Mental Health</option>
-                <option value="History">History</option>
-                <option value="Environment">Environment</option>
-            </select>
-        </div>
+        <h4>Hover over a program for details</h4>
 
         <div id="resourceList">
-            <div class="resource" data-category="Environment">
+            <div class="resource">
                 <h2><a href="EP.html">Environmental Projects</a></h2>
-                <p>Programs that help preserve certain land or the environment.</p>
+                <div class="tooltip-text">Programs that help preserve land or the environment.</div>
             </div>
-            <div class="resource" data-category="Food">
+            <div class="resource">
                 <h2><a href="FoodServices.html">Food Services</a></h2>
-                <p>Programs that offer food support to people in need or help to reduce food loss.</p>
+                <div class="tooltip-text">Programs that offer food support or help reduce food loss.</div>
             </div>
-            <div class="resource" data-category="Grants">
+            <div class="resource">
                 <h2><a href="GrantMake.html">Grantmaking Organizations</a></h2>
-                <p>Groups that give money to people or projects in support of a specific cause.</p>
+                <div class="tooltip-text">Groups that give money to support specific causes.</div>
             </div>
-            <div class="resource" data-category="History">
+            <div class="resource">
                 <h2><a href="history.html">History</a></h2>
-                <p>Programs that help preserve history.</p>
+                <div class="tooltip-text">Programs that help preserve history.</div>
             </div>
-            <div class="resource" data-category="Housing">
+            <div class="resource">
                 <h2><a href="HousingS.html">Housing Support</a></h2>
-                <p>Programs that help find and keep affordable housing. Some also help build housing.</p>
+                <div class="tooltip-text">Programs that help find, keep, or build affordable housing.</div>
             </div>
-            <div class="resource" data-category="Support">
+            <div class="resource">
                 <h2><a href="CommunityHuman.html">Human Services/ Community Support</a></h2>
-                <p>Programs or organizations that help people improve well-being or meet basic needs.</p>
+                <div class="tooltip-text">Programs that improve well-being or meet basic needs.</div>
             </div>
-            <div class="resource" data-category="MH">
+            <div class="resource">
                 <h2><a href="MHSupport.html">Mental Health Support</a></h2>
-                <p>Services that help people with their emotional, psychological, and mental well-being.</p>
+                <div class="tooltip-text">Services for emotional, psychological, and mental well-being.</div>
             </div>
-            <div class="resource" data-category="Youth">
+            <div class="resource">
                 <h2><a href="YouthS.html">Youth and Senior Support</a></h2>
-                <p>Groups that help youth succeed, grow, and develop life skills or help take care of senior citizens.</p>
+                <div class="tooltip-text">Groups that help youth develop life skills or support senior citizens.</div>
             </div>
         </div>
     </div>
-
-    <script>
-        function filterResources() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
-            const categoryFilter = document.getElementById('categoryFilter').value;
-            const resources = document.querySelectorAll('.resource');
-
-            resources.forEach(resource => {
-                const title = resource.querySelector('h2').textContent.toLowerCase();
-                const category = resource.getAttribute('data-category');
-
-                if (
-                    (title.includes(searchInput) || searchInput === '') &&
-                    (category === categoryFilter || categoryFilter === '')
-                ) {
-                    resource.style.display = '';
-                } else {
-                    resource.style.display = 'none';
-                }
-            });
-        }
-    </script>
 </body>
 </html>
+
 
 
