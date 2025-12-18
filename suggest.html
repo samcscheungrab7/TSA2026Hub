@@ -1,100 +1,147 @@
- <html lang="en">
-
-<title>Home Page</title>
-<br>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Top Menu Bar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <title>Suggest a New Community Resource</title>
 
-        
-        .navbar {
-            background-color: #7A5C58;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe4e1; /* ⬅️ light pink background */
+      color: black;
+    }
 
-        
-        .navbar a {
-            float: left;
-            color: #FFEDFB;
-            text-align: center;
-            padding: 25px 29px;
-			font-size: 18px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: hotpink;
-        }
-		{
-            padding-top: 60px;
-        }
-    </style>
+    /* NAVBAR */
+    .navbar {
+      background-color: #7A5C58;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      float: left;
+      color: #FFEDFB;
+      text-align: center;
+      padding: 25px 29px;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: hotpink;
+    }
+
+    /* PAGE SPACING BELOW NAV */
+    .page-content {
+      padding-top: 120px;
+    }
+
+    /* HEADING */
+    .shadow-heading {
+      font-size: 48px;
+      color: #000000;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* FORM SECTION */
+    .submit-resource {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px; /* ⬅️ moves text away from walls */
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .submit-resource h4 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #7A5C58;
+      color: #FFEDFB;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hotpink;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="navbar">
-        <a href="index.html">Home</a>
+
+  <div class="navbar">
+    <a href="index.html">Home</a>
+  </div>
+
+  <div class="page-content">
+
+    <div class="shadow-heading">
+      Suggest a New Community Resource
     </div>
-	
-<br><br><br><br>
 
+    <section class="submit-resource">
+      <h4>*Submit the form below and we will get back to you about your idea*</h4>
 
-<font size=+6 class="shadow-heading"><b><center>Suggest a New Community Resource</center></font></b>
-	<br><br>
-<style>
+      <form action="https://formspree.io/f/xnnegaqd" method="POST">
 
-.shadow-heading {
-  font-size: 48px;
-  color: #000000;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-}
-</style>
+        <label for="resource-name">Resource Name:</label>
+        <input type="text" id="resource-name" name="resource-name" required>
 
+        <label for="resource-type">Resource Type:</label>
+        <select id="resource-type" name="resource-type" required>
+          <option value="">--- Choose a Type ---</option>
+          <option>Grantmaking Organizations</option>
+          <option>Food Services</option>
+          <option>Human Services / Community Support</option>
+          <option>Youth Support</option>
+          <option>Housing Support</option>
+          <option>Mental Health Support</option>
+          <option>History</option>
+          <option>Environmental Projects</option>
+          <option>Other</option>
+        </select>
 
+        <label for="resource-description">Description of Resource:</label>
+        <textarea id="resource-description" name="resource-description" rows="4" required></textarea>
 
+        <label for="resource-contact">Your Contact Information (Email or Phone Number):</label>
+        <input type="text" id="resource-contact" name="resource-contact" required>
 
+        <button type="submit">Submit Resource</button>
 
- <section class="submit-resource">
-<h4><center>*Submit the form below and we will get back to you about your idea*</center></h4><br>
-  <form action="https://formspree.io/f/xnnegaqd" method="POST">
-    <h3>
-    <label for="resource-name">Resource Name:</label>
-    <input type="text" id="resource-name" name="resource-name" required>
-<br><br>
-    <label for="resource-type">Resource Type:</label>
-    <select id="resource-type" name="resource-type" required><br><br>
-      <option value="">--- Choose a Type ---</option>
-      <option value="food">Grantmaking Organizations</option>
-      <option value="shelter">Food Services</option>
-      <option value="health">Human Services/ Community Support</option>
-      <option value="education">Youth Support</option>
-      <option value="jobs">Housing Support</option>
-      <option value="other">Mental Health Support</option>
-    <option value="other">History</option>
-	    <option value="other">Environmental Projects</option>
-    <option value="other">Other</option>
+      </form>
+    </section>
 
-	</select>
-<br><br>
-    <label for="resource-description">Description of Resource:</label>
-    <textarea id="resource-description" name="resource-description" rows="4" required></textarea>
-<br><br>
-    <label for="resource-contact">Your Contact Information (Email or Phone Number):</label>
-    <input type="text" id="resource-contact" name="resource-contact" required>
-<br><br>
-    <button type="submit">Submit Resource</button>
-  </form>
-</section></h3>
-
+  </div>
 
 </body>
-
 </html>
 	
