@@ -1,140 +1,189 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Community Resource Highlights</title>
+    <meta charset="UTF-8">
+    <title>Community Resource Highlights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3efe9, #e6dccf);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #ffe4e1;
-      color: black;
-    }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-width: 900px;
+            width: 90%;
+            margin: 40px 0;
+        }
 
-    /* NAVBAR */
-    .navbar {
-      background-color: #7A5C58;
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
+        h1 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+            color: #3b2f2f;
+        }
 
-    .navbar a {
-      float: left;
-      color: #FFEDFB;
-      text-align: center;
-      padding: 25px 29px;
-      font-size: 18px;
-      text-decoration: none;
-    }
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #5a4a42;
+        }
 
-    .navbar a:hover {
-      background-color: hotpink;
-    }
+        #resourceList {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
 
-    /* PAGE SPACING BELOW NAV */
-    .page-content {
-      padding-top: 120px;
-    }
+        .resource-card {
+            background: linear-gradient(135deg, #8b5e3c, #6f4528);
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            cursor: pointer;
+        }
 
-    /* HEADING */
-    .shadow-heading {
-      font-size: 48px;
-      color: #000000;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      text-align: center;
-      margin-bottom: 40px;
-    }
+        .resource-card h3 {
+            color: #fff;
+            margin-bottom: 12px;
+        }
 
-    /* RESOURCE GRID */
-    #resourceList {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columns */
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        .tooltip-text {
+            visibility: hidden;
+            opacity: 0;
+            width: 240px;
+            background-color: #3b2f2f;
+            color: #ffffff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 10;
+        }
 
-    .resource-card {
-      background-color: white;
-      border: 1px solid grey;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      text-align: center;
-    }
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 8px;
+            border-style: solid;
+            border-color: #3b2f2f transparent transparent transparent;
+        }
 
-    .resource-card a {
-      display: inline-block;
-      margin-top: 10px;
-      color: #7A5C58;
-      font-weight: bold;
-      text-decoration: none;
-    }
+        .resource-card:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
 
-    .resource-card a:hover {
-      text-decoration: underline;
-    }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, #9c6a44, #7b4b2b);
+        }
 
-    /* MOBILE */
-    @media (max-width: 700px) {
-      #resourceList {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .resource-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            transition: text-decoration 0.2s ease;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            background-color: #7A5C58;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .navbar a {
+            float: left;
+            color: #FFEDFB;
+            text-align: center;
+            padding: 20px 25px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #9c6a44;
+        }
+
+        @media (max-width: 800px) {
+            #resourceList {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-  </div>
-
-  <!-- PAGE CONTENT -->
-  <div class="page-content">
-
-    <div class="shadow-heading">
-      <font size=+6 class="shadow-heading"><b><center>Community Resource Highlights
-</center></font></b>
-
-      
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
     </div>
 
-    <!-- RESOURCE CARDS -->
-    <div id="resourceList">
+    <!-- PAGE CONTENT -->
+    <div class="container">
+        <h1>Community Resource Highlights</h1>
+        <h4>Featured Programs and Organizations in Your Area</h4>
 
-      <div class="resource-card">
-        <h3>YWCA Hanover Safe Home</h3>
-        <p>If you are in any type of danger at all, come here to seek help.</p>
-        <a href="CommunityHuman.html" target="_blank">Learn More</a>
-      </div>
+        <div id="resourceList">
+            <div class="resource-card">
+                <h3>YWCA Hanover Safe Home</h3>
+                <div class="tooltip-text">If you are in any type of danger at all, come here to seek help.</div>
+                <a href="CommunityHuman.html" target="_blank">Learn More</a>
+            </div>
 
-      <div class="resource-card">
-        <h3>Religion</h3>
-        <p>If you are looking for religious services, visit our Human Services / Community Support.</p>
-        <a href="CommunityHuman.html" target="_blank">Explore Options</a>
-      </div>
+            <div class="resource-card">
+                <h3>Religion</h3>
+                <div class="tooltip-text">If you are looking for religious services, visit our Human Services / Community Support.</div>
+                <a href="CommunityHuman.html" target="_blank">Explore Options</a>
+            </div>
 
-      <div class="resource-card">
-        <h3>Mental Health Struggles</h3>
-        <p>If you struggle with your mental health, click here to talk to somebody and get help.</p>
-        <a href="MHSupport.html" target="_blank">Click Here</a>
-      </div>
+            <div class="resource-card">
+                <h3>Mental Health Struggles</h3>
+                <div class="tooltip-text">If you struggle with your mental health, click here to talk to somebody and get help.</div>
+                <a href="MHSupport.html" target="_blank">Click Here</a>
+            </div>
 
-      <div class="resource-card">
-        <h3>Non-Profit Grants?</h3>
-        <p>If you are looking for a grant to help with your non-profit, click here!</p>
-        <a href="https://www.instrumentl.com/browse-grants/adams-county-pa" target="_blank">Click Here</a>
-      </div>
-
+            <div class="resource-card">
+                <h3>Non-Profit Grants?</h3>
+                <div class="tooltip-text">If you are looking for a grant to help with your non-profit, click here!</div>
+                <a href="https://www.instrumentl.com/browse-grants/adams-county-pa" target="_blank">Click Here</a>
+            </div>
+        </div>
     </div>
-  </div>
-
 </body>
 </html>
 
