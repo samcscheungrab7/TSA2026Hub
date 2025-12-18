@@ -1,0 +1,175 @@
+<html><body>
+
+
+<br>
+<head>
+    <meta charset="UTF-8">
+    <title>Top Menu Bar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .navbar {
+            background-color: #7A5C58;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        
+        .navbar a {
+            float: left;
+            color: #FFEDFB;
+            text-align: center;
+            padding: 25px 29px;
+			font-size: 18px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: hotpink;
+        }
+		{
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+    </div>
+	
+<br><br><br><br>
+
+
+<font size=+6 class="shadow-heading"><b><center>Welcome To Your Community Resource Hub!</center></font></b>
+<br><br>
+<style>
+</style>
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Resource Directory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .search-bar {
+      margin-bottom: 20px;
+    }
+    .resource {
+      border: 1px solid grey;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .hidden {
+      display: none;
+	  
+    }
+  </style>
+</head>
+<style>
+  #resourceList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .resource {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+<body style="background-color: #ffe4e1; text=black"><br>
+  <h1><center>Interactive Directory: Search Programs Here</center></h1>
+  <div align=center class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search resources..." onkeyup="filterResources()">
+    <select id="categoryFilter" onchange="filterResources()">
+      <option value="">All Categories</option>
+      <option value="Grants">Grants</option>
+      <option value="Food">Food</option>
+      <option value="Support">Human Support</option>
+	  <option value="Youth">Youth/Senior</option>
+      <option value="Housing">Housing</option>
+      <option value="MH">Mental Health</option>
+      <option value="History">History</option>
+      <option value="Environment">Environment</option>
+
+    </select>
+  </div>
+  <div id="resourceList">
+	  <div class="resource" data-category="Environment">
+      <h2><center><a href="EP.html">Environmental Projects</a></h2></center>
+      <p><center>Programs that help preserve certain land or the environment.</center></p>
+    </div>
+	    <div class="resource" data-category="Food">
+      <h2><center><a href="FoodServices.html">Food Services</a></h2></center>
+      <p><center>Programs that offer food support to people in need or help to reduce food loss.</center></p>
+    </div>
+    <div class="resource" data-category="Grants">
+      <h2><center><a href="GrantMake.html">Grantmaking Organizations</a></h2></center>
+      <p><center>Groups that give money to people or projects in support of a specific cause.</center></p>
+    </div>
+	  <div class="resource" data-category="History">
+      <h2><center><a href="history.html">History</a></h2></center>
+      <p><center>Programs that help preserve history.</center></p>
+    </div>
+  <div class="resource" data-category="Housing">
+      <h2><center><a href="HousingS.html">Housing Support</a></h2></center>
+      <p><center>Programs that help find and keep affordable housing. Some of these programs also help build
+	  housing.</center></p>
+    </div>
+    <div class="resource" data-category="Support">
+      <h2><center><a href="CommunityHuman.html">Human Services/ Community Support</a></h2></center>
+      <p><center>Programs or organizations that help people improve well being or meet basic needs.</center></p>
+    </div>
+	  <div class="resource" data-category="MH">
+      <h2><center><a href="MHSupport.html">Mental Health Support</a></h2></center>
+      <p><center>Services that help people with their emotional, psychological, and mental well-being.</center></p>
+    </div>
+	  <div class="resource" data-category="Youth">
+      <h2><center><a href="YouthS.html">Youth and Senior Support</a></h2></center>
+      <p><center>Groups that help youth succeed, grow, and develop life skills or help take care of senior citizens.</center></p>
+    </div>
+  </div>
+  <script>
+    function filterResources() {
+      const searchInput = document.getElementById('searchInput').value.toLowerCase();
+      const categoryFilter = document.getElementById('categoryFilter').value;
+      const resources = document.querySelectorAll('.resource');
+
+      resources.forEach(resource => {
+        const title = resource.querySelector('h2').textContent.toLowerCase();
+        const category = resource.getAttribute('data-category');
+
+        if (
+          (title.includes(searchInput) || searchInput === '') &&
+          (category === categoryFilter || categoryFilter === '')
+        ) {
+          resource.classList.remove('hidden');
+        } else {
+          resource.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+  
+  </body></html>
