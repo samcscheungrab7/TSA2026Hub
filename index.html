@@ -70,19 +70,19 @@
     background-color: #7A5C58; /* big colored strip */
     padding: 60px 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-gap: 30px; /* space between boxes */
-    justify-items: center; /* center boxes horizontally */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px; /* ⬅️ closer together */
+    justify-items: center;
   }
 
   .category-box {
     background-color: white;
-    color: #7A5C58;
+    color: #000000; /* ⬅️ black text */
     text-decoration: none;
-    font-size: 22px;
+    font-size: 26px; /* ⬅️ bigger wording */
     font-weight: bold;
-    padding: 60px 30px; /* bigger boxes */
-    width: 100%; /* make box fill its grid cell */
+    padding: 60px 30px;
+    width: 100%;
     max-width: 400px;
     text-align: center;
     border-radius: 12px;
@@ -98,7 +98,7 @@
   /* Mobile: stack vertically */
   @media (max-width: 600px) {
     .category-strip {
-      grid-template-columns: 1fr; /* 1 column on mobile */
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -109,7 +109,6 @@
   <a href="#disability" class="category-box">Suggest a New Community Resource</a>
   <a href="#faith" class="category-box">Important Forms</a>
 </div>
-
 	
 
 
@@ -376,6 +375,7 @@
 
 </body>
 </html>
+
 
 
 
