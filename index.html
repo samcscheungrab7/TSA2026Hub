@@ -70,24 +70,24 @@
 <style>
   .category-strip {
     background-color: #7A5C58;
-    padding: 60px 20px; 
+    padding: 60px 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 30px; 
+    flex-wrap: wrap;       /* allows boxes to wrap to next row */
+    justify-content: center;
+    gap: 30px;             /* spacing between boxes */
   }
 
   .category-box {
     background-color: white;
     color: #7A5C58;
     text-decoration: none;
-    font-size: 22px; 
+    font-size: 22px;
     font-weight: bold;
-    padding: 50px 30px; 
-    width: 45%;
+    padding: 50px 30px;    /* bigger boxes */
+    width: calc(50% - 30px); /* 2 boxes per row with gap accounted for */
     text-align: center;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
     transition: transform 0.2s ease, background-color 0.2s ease;
   }
 
@@ -96,11 +96,11 @@
     transform: translateY(-6px);
   }
 
-  /* Mobile friendly */
-  @media (max-width: 800px) {
+  /* Mobile adjustments */
+  @media (max-width: 600px) {
     .category-box {
-      width: 100%;
-      max-width: 350px; 
+      width: 100%;        /* stack vertically on small screens */
+      max-width: 350px;   /* limit max width */
     }
   }
 </style>
@@ -397,6 +397,7 @@
 
 </body>
 </html>
+
 
 
 
