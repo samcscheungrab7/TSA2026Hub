@@ -9,7 +9,7 @@
             font-family: "Georgia", serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f3efe9, #e6dccf); /* homepage gradient */
+            background: linear-gradient(135deg, #f3efe9, #e6dccf);
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -30,13 +30,25 @@
         h1 {
             font-size: 2.4rem;
             margin-bottom: 15px;
-            color: #3b2f2f; /* dark brown */
+            color: #3b2f2f;
         }
 
         h4 {
             font-size: 1.2rem;
-            margin-bottom: 35px;
-            color: #5a4a42; /* lighter brown */
+            margin-bottom: 20px;
+            color: #5a4a42;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+        }
+
+        .search-bar input, .search-bar select {
+            padding: 12px 15px;
+            font-size: 1rem;
+            margin: 0 5px 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
         }
 
         #resourceList {
@@ -46,7 +58,7 @@
         }
 
         .resource {
-            background: linear-gradient(135deg, #8b5e3c, #6f4528); /* brown gradient */
+            background: linear-gradient(135deg, #8b5e3c, #6f4528);
             padding: 25px;
             border-radius: 14px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
@@ -66,7 +78,7 @@
             visibility: hidden;
             opacity: 0;
             width: 250px;
-            background-color: #3b2f2f; /* dark brown */
+            background-color: #3b2f2f;
             color: #ffffff;
             text-align: center;
             padding: 12px;
@@ -101,7 +113,7 @@
         .resource:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            background: linear-gradient(135deg, #9c6a44, #7b4b2b); /* lighter brown hover */
+            background: linear-gradient(135deg, #9c6a44, #7b4b2b);
         }
 
         @media (max-width: 800px) {
@@ -116,7 +128,7 @@
         <h1>Interactive Directory</h1>
         <h4>Search Programs Here</h4>
 
-          <div class="search-bar">
+        <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search resources..." onkeyup="filterResources()">
             <select id="categoryFilter" onchange="filterResources()">
                 <option value="">All Categories</option>
@@ -132,40 +144,60 @@
         </div>
 
         <div id="resourceList">
-            <div class="resource">
+            <div class="resource" data-category="Environment">
                 <h2><a href="EP.html">Environmental Projects</a></h2>
                 <div class="tooltip-text">Programs that help preserve land or the environment.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="Food">
                 <h2><a href="FoodServices.html">Food Services</a></h2>
                 <div class="tooltip-text">Programs that offer food support or help reduce food loss.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="Grants">
                 <h2><a href="GrantMake.html">Grantmaking Organizations</a></h2>
                 <div class="tooltip-text">Groups that give money to support specific causes.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="History">
                 <h2><a href="history.html">History</a></h2>
                 <div class="tooltip-text">Programs that help preserve history.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="Housing">
                 <h2><a href="HousingS.html">Housing Support</a></h2>
                 <div class="tooltip-text">Programs that help find, keep, or build affordable housing.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="Support">
                 <h2><a href="CommunityHuman.html">Human Services/ Community Support</a></h2>
                 <div class="tooltip-text">Programs that improve well-being or meet basic needs.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="MH">
                 <h2><a href="MHSupport.html">Mental Health Support</a></h2>
                 <div class="tooltip-text">Services for emotional, psychological, and mental well-being.</div>
             </div>
-            <div class="resource">
+            <div class="resource" data-category="Youth">
                 <h2><a href="YouthS.html">Youth and Senior Support</a></h2>
                 <div class="tooltip-text">Groups that help youth develop life skills or support senior citizens.</div>
             </div>
         </div>
     </div>
+
+    <script>
+        function filterResources() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const resources = document.querySelectorAll('.resource');
+
+            resources.forEach(resource => {
+                const title = resource.querySelector('h2').textContent.toLowerCase();
+                const category = resource.getAttribute('data-category');
+
+                if ((title.includes(searchInput) || searchInput === '') &&
+                    (category === categoryFilter || categoryFilter === '')) {
+                    resource.style.display = "block";
+                } else {
+                    resource.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
 
