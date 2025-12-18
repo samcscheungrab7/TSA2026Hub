@@ -116,30 +116,6 @@
             text-decoration: underline;
         }
 
-        /* NAVBAR */
-        .navbar {
-            background-color: #7A5C58;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 10px 0;
-        }
-
-        .navbar a {
-            float: left;
-            color: #FFEDFB;
-            text-align: center;
-            padding: 20px 25px;
-            font-size: 18px;
-            text-decoration: none;
-        }
-
-        .navbar a:hover {
-            background-color: #9c6a44;
-        }
-
         @media (max-width: 800px) {
             #resourceList {
                 grid-template-columns: 1fr;
@@ -148,15 +124,9 @@
     </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <a href="index.html">Home</a>
-    </div>
-
-    <!-- PAGE CONTENT -->
     <div class="container">
         <h1>Community Resource Highlights</h1>
-        <h4>Featured Programs and Organizations in Your Area</h4>
+        <h4>Hover over a card to see more details</h4>
 
         <div id="resourceList">
             <div class="resource-card">
@@ -186,4 +156,3 @@
     </div>
 </body>
 </html>
-
