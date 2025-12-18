@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Important Forms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: "Georgia", serif;
@@ -28,7 +29,7 @@
 
         h1 {
             font-size: 2.6rem;
-            margin-bottom: 45px;
+            margin-bottom: 40px;
             color: #3b2f2f;
         }
 
@@ -36,34 +37,35 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            justify-items: center;
-        }
-
-        /* Center the third box */
-        .button-group .single {
-            grid-column: 1 / -1;
-            width: 60%;
         }
 
         .resource-card {
+            box-sizing: border-box;
             position: relative;
             width: 100%;
             padding: 26px;
             font-size: 1.2rem;
             font-weight: 600;
-            border: none;
             border-radius: 14px;
             cursor: pointer;
             background: linear-gradient(135deg, #8b5e3c, #6f4528);
             color: #ffffff;
             box-shadow: 0 6px 15px rgba(139, 94, 60, 0.4);
             transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            text-align: center;
         }
 
         .resource-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 25px rgba(139, 94, 60, 0.5);
             background: linear-gradient(135deg, #9c6a44, #7b4b2b);
+        }
+
+        /* Center the third card */
+        .resource-card.single {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 60%;
         }
 
         /* Make entire card clickable */
@@ -78,12 +80,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .button-group .single {
-                width: 100%;
+            .resource-card.single {
+                max-width: 100%;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Important Forms</h1>
