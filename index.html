@@ -68,15 +68,14 @@
 </style>
 
 
-
 <style>
   .category-strip {
     background-color: #7A5C58;
     padding: 50px 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* ⬅️ 4 boxes in a row */
     row-gap: 28px;       /* vertical spacing */
-    column-gap: -50px;   /* tight horizontally */
+    column-gap: 20px;    /* horizontal spacing between boxes */
     justify-items: center;
   }
 
@@ -84,11 +83,11 @@
     background-color: white;
     color: #000000;
     text-decoration: none;
-    font-size: 32px;      /* ⬅️ bigger main text */
+    font-size: 32px;      /* bigger main text */
     font-weight: bold;
-    padding: 70px 40px;   /* ⬅️ bigger boxes */
+    padding: 70px 40px;   /* bigger boxes */
     width: 100%;
-    max-width: 450px;     /* ⬅️ slightly wider */
+    max-width: 450px;     /* slightly wider */
     text-align: center;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
@@ -98,7 +97,7 @@
 
   .category-box span {
     display: block;
-    font-size: 26px;     /* ⬅️ bigger secondary text */
+    font-size: 26px;     /* bigger secondary text */
     margin-top: 8px;
     font-weight: 600;
   }
@@ -109,9 +108,17 @@
   }
 
   /* Mobile: stack vertically */
+  @media (max-width: 1200px) {
+    .category-strip {
+      grid-template-columns: repeat(2, 1fr); /* 2 per row on smaller screens */
+      row-gap: 20px;
+      column-gap: 20px;
+    }
+  }
+
   @media (max-width: 600px) {
     .category-strip {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* 1 per row on mobile */
       row-gap: 20px;
       column-gap: 0;
     }
@@ -131,9 +138,9 @@
   <a href="important.html" class="category-box">Important Forms</a>
 </div>
 
-
 </body>
 </html>
+
 
 
 
