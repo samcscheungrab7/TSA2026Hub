@@ -1,89 +1,128 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grantmaking Organizations</title>
 
-<head><title>Grantmaking Organizations</title></head>
+<style>
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: linear-gradient(135deg, #f3efe9, #e6dccf);
+        color: #3b2f2f;
+    }
 
-<body style="background-color: #ffe4e1; text=black">
-<br>
+    /* Navbar */
+    .navbar {
+        background-color: #6f4528;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
 
+    .navbar a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 22px 26px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
 
+    .navbar a:hover {
+        background-color: #8b5e3c;
+    }
 
-	<head>
-    <meta charset="UTF-8">
-    <title>Top Menu Bar</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
+    /* Page content */
+    .content {
+        padding-top: 110px;
+        width: 85%;
+        margin: auto;
+    }
 
-        
-        .navbar {
-            background-color: #7A5C58;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
 
-        
-        .navbar a {
-            float: left;
-            color: #FFEDFB;
-            text-align: center;
-            padding: 25px 29px;
-			font-size: 18px;
-            text-decoration: none;
-        }
-        .navbar a:hover {
-            background-color: hotpink;
-        }
-		{
-            padding-top: 60px;
-        }
-    </style>
+    h2 a {
+        color: #6f4528;
+        text-decoration: none;
+    }
+
+    h2 a:hover {
+        text-decoration: underline;
+    }
+
+    h3 {
+        font-weight: normal;
+        color: #5a4a42;
+        line-height: 1.6;
+        max-width: 900px;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: #cbb8a9;
+        margin: 60px 0;
+    }
+
+    img {
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+</style>
 </head>
+
 <body>
 
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="#ID">Adams County Community Foundation</a>
-        <a href="#CRH">Instrumentl</a>
-    </div>
-	
-<br><br><br><br>
-	
-<br>
-<font size=+6 class="shadow-heading"><b><center>Grantmaking Organizations</center></font></b>
-<style>
-.shadow-heading {
-  font-size: 48px;
-  color: #000000;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-}
-</style>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="#ID">Adams County Community Foundation</a>
+    <a href="#CRH">Instrumentl</a>
+</div>
 
+<div class="content">
 
-<br><br><a name="ID"></a><hr><br>
-<h2><center><div style="padding-left: 40px; padding-right: 60px;"><img src="ACC.jpeg" width=350 height=200 vspace=10 hspace=50 align=left>
-<br><br>
-<a href="https://www.adamscountycf.org/">Adams County Community Foundation</a><br></h2></center>
-<h3><center>Our mission is to inspire people and communities to build and distribute charitable funds for good, for Adams County, for ever.
-</center></h3></div><br><br><br><br><br><br>
+<h1>Grantmaking Organizations</h1>
 
-<a name="CRH"></a><hr><br><br>
-<h2><center><img src="grants.jpeg" width=350 height=200 vspace=10 hspace=50 align=right>
-<br><br>
-<a href="https://www.instrumentl.com/browse-grants/adams-county-pa">Instrumentl</a><br></h2></center>
-<h3><center>Looking for grants for 501(c)(3) nonprofit organizations working in Adams County, Pennsylvania? Find the 
-perfect grant for your nonprofit on Instrumentl
-</center></h3><br><br>
-
-<br><br><br>
+<a name="ID"></a>
 <hr>
-<br><br><br>
+
+<h2>
+    <img src="ACC.jpeg" width="350" height="200" align="left" hspace="40">
+    <a href="https://www.adamscountycf.org/">Adams County Community Foundation</a>
+</h2>
+<h3>
+    Our mission is to inspire people and communities to build and distribute
+    charitable funds for good, for Adams County, forever.
+</h3>
+<br clear="left">
+
+<a name="CRH"></a>
+<hr>
+
+<h2>
+    <img src="grants.jpeg" width="350" height="200" align="right" hspace="40">
+    <a href="https://www.instrumentl.com/browse-grants/adams-county-pa">Instrumentl</a>
+</h2>
+<h3>
+    Looking for grants for 501(c)(3) nonprofit organizations working in Adams County,
+    Pennsylvania? Find the perfect grant for your nonprofit on Instrumentl.
+</h3>
+<br clear="right">
+
+</div>
+
 </body>
 </html>
-
 
 
 
