@@ -65,16 +65,14 @@
 
 
 
-
-	
 <style>
   .category-strip {
     background-color: #7A5C58;
     padding: 60px 20px;
     display: flex;
-    flex-wrap: wrap;       /* allows boxes to wrap to next row */
+    flex-wrap: wrap;      /* allows boxes to wrap */
     justify-content: center;
-    gap: 30px;             /* spacing between boxes */
+    gap: 30px;            /* spacing between boxes */
   }
 
   .category-box {
@@ -83,8 +81,8 @@
     text-decoration: none;
     font-size: 22px;
     font-weight: bold;
-    padding: 50px 30px;    /* bigger boxes */
-    width: calc(50% - 30px); /* 2 boxes per row with gap accounted for */
+    padding: 60px 30px;  /* bigger boxes */
+    flex: 0 0 45%;        /* ensures 2 boxes per row */
     text-align: center;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
@@ -99,8 +97,8 @@
   /* Mobile adjustments */
   @media (max-width: 600px) {
     .category-box {
-      width: 100%;        /* stack vertically on small screens */
-      max-width: 350px;   /* limit max width */
+      flex: 0 0 100%;     /* stack vertically on small screens */
+      max-width: 350px;
     }
   }
 </style>
@@ -111,8 +109,6 @@
   <a href="#disability" class="category-box">Disability Support</a>
   <a href="#faith" class="category-box">Faith-Based</a>
 </div>
-
-
 
 
 
@@ -397,6 +393,7 @@
 
 </body>
 </html>
+
 
 
 
