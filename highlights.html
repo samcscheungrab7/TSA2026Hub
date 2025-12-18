@@ -1,5 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
+<!-- Home Button -->
+<a href="index.html" class="home-button">Home</a>
+
+<style>
+.home-button {
+    position: fixed;      /* Stays in the corner */
+    top: 20px;            /* Distance from top */
+    left: 20px;           /* Distance from left */
+    padding: 12px 20px;   /* Button size */
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;       /* Text color */
+    background: linear-gradient(135deg, #8b5e3c, #6f4528); /* Matches your theme */
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 6px 15px rgba(139, 94, 60, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    z-index: 1000;        /* Make sure it stays on top */
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 94, 60, 0.5);
+    background: linear-gradient(135deg, #9c6a44, #7b4b2b);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+    
 <head>
     <meta charset="UTF-8">
     <title>Community Resource Highlights</title>
@@ -167,6 +209,7 @@
     </div>
 </body>
 </html>
+
 
 
 
