@@ -19,24 +19,18 @@
         .container {
             text-align: center;
             background: #ffffff;
-            padding: 50px 40px;
+            padding: 40px 40px 50px 40px;
             border-radius: 18px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             max-width: 900px;
             width: 90%;
-            margin: 40px 0;
+            margin: 20px 0;
         }
 
         h1 {
             font-size: 2.4rem;
-            margin-bottom: 15px;
+            margin-bottom: 25px; /* slightly higher heading */
             color: #3b2f2f;
-        }
-
-        h4 {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #5a4a42;
         }
 
         #resourceList {
@@ -54,10 +48,11 @@
             position: relative;
             transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
             cursor: pointer;
+            color: #fff;
+            text-decoration: none;
         }
 
         .resource-card h3 {
-            color: #fff;
             margin-bottom: 12px;
         }
 
@@ -103,17 +98,14 @@
             background: linear-gradient(135deg, #9c6a44, #7b4b2b);
         }
 
+        /* Make entire card clickable without showing link text */
         .resource-card a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            transition: text-decoration 0.2s ease;
-        }
-
-        .resource-card a:hover {
-            text-decoration: underline;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-indent: -9999px; /* hide the link text */
         }
 
         @media (max-width: 800px) {
@@ -130,25 +122,25 @@
             <div class="resource-card">
                 <h3>YWCA Hanover Safe Home</h3>
                 <div class="tooltip-text">If you are in any type of danger at all, come here to seek help.</div>
-                <a href="CommunityHuman.html" target="_blank">Learn More</a>
+                <a href="CommunityHuman.html" target="_blank"></a>
             </div>
 
             <div class="resource-card">
                 <h3>Religion</h3>
                 <div class="tooltip-text">If you are looking for religious services, visit our Human Services / Community Support.</div>
-                <a href="CommunityHuman.html" target="_blank">Explore Options</a>
+                <a href="CommunityHuman.html" target="_blank"></a>
             </div>
 
             <div class="resource-card">
                 <h3>Mental Health Struggles</h3>
                 <div class="tooltip-text">If you struggle with your mental health, click here to talk to somebody and get help.</div>
-                <a href="MHSupport.html" target="_blank">Click Here</a>
+                <a href="MHSupport.html" target="_blank"></a>
             </div>
 
             <div class="resource-card">
                 <h3>Non-Profit Grants?</h3>
                 <div class="tooltip-text">If you are looking for a grant to help with your non-profit, click here!</div>
-                <a href="https://www.instrumentl.com/browse-grants/adams-county-pa" target="_blank">Click Here</a>
+                <a href="https://www.instrumentl.com/browse-grants/adams-county-pa" target="_blank"></a>
             </div>
         </div>
     </div>
