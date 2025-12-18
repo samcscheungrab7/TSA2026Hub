@@ -114,7 +114,22 @@
 <body>
     <div class="container">
         <h1>Interactive Directory</h1>
-        <h4>Hover over a program for details</h4>
+        <h4>Search Programs Here</h4>
+
+          <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search resources..." onkeyup="filterResources()">
+            <select id="categoryFilter" onchange="filterResources()">
+                <option value="">All Categories</option>
+                <option value="Grants">Grants</option>
+                <option value="Food">Food</option>
+                <option value="Support">Human Support</option>
+                <option value="Youth">Youth/Senior</option>
+                <option value="Housing">Housing</option>
+                <option value="MH">Mental Health</option>
+                <option value="History">History</option>
+                <option value="Environment">Environment</option>
+            </select>
+        </div>
 
         <div id="resourceList">
             <div class="resource">
@@ -153,6 +168,7 @@
     </div>
 </body>
 </html>
+
 
 
 
