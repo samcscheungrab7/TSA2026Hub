@@ -13,10 +13,35 @@
             background: linear-gradient(135deg, #f3efe9, #e6dccf);
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
+            padding-top: 140px; /* space under navbar */
         }
 
+        /* NAVBAR */
+        .navbar {
+            background-color: #6f4528;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 22px 26px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #8b5e3c;
+        }
+
+        /* MAIN CONTAINER */
         .container {
             text-align: center;
             background: #ffffff;
@@ -33,6 +58,7 @@
             color: #3b2f2f;
         }
 
+        /* BUTTON GRID */
         .button-group {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -40,6 +66,7 @@
         }
 
         .resource-card {
+            font-family: "Georgia", serif;
             box-sizing: border-box;
             position: relative;
             width: 100%;
@@ -61,7 +88,7 @@
             background: linear-gradient(135deg, #9c6a44, #7b4b2b);
         }
 
-        /* Center the third card */
+        /* Center third card */
         .resource-card.single {
             grid-column: 1 / -1;
             justify-self: center;
@@ -75,6 +102,7 @@
             text-indent: -9999px;
         }
 
+        /* MOBILE */
         @media (max-width: 600px) {
             .button-group {
                 grid-template-columns: 1fr;
@@ -88,6 +116,11 @@
 </head>
 
 <body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+    </div>
+
     <div class="container">
         <h1>Important Forms</h1>
 
@@ -108,8 +141,10 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>
+
 
 
 
