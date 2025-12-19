@@ -2,36 +2,87 @@
 <html lang="en">
 
 
-
-<!-- Home Button -->
-<a href="index.html" class="home-button">Home</a>
-
 <style>
-.home-button {
-    position: fixed;      /* Stays in the corner */
-    top: 20px;            /* Distance from top */
-    left: 20px;           /* Distance from left */
-    padding: 15px 23px;   /* Button size */
-    font-size: 1rem;
-    font-weight: 600;
-    color: #ffffff;       /* Text color */
-    background: linear-gradient(135deg, #8b5e3c, #6f4528); /* Matches your theme */
-    border: none;
-    border-radius: 12px;
-    text-decoration: none;
-    box-shadow: 0 6px 15px rgba(139, 94, 60, 0.4);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    z-index: 1000;        /* Make sure it stays on top */
-}
+    body {
+        margin: 0;
+        font-family: "Georgia", serif;
+        background: linear-gradient(135deg, #f3efe9, #e6dccf);
+        color: #3b2f2f;
+    }
 
-.home-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(139, 94, 60, 0.5);
-    background: linear-gradient(135deg, #9c6a44, #7b4b2b);
-}
+    /* Navbar */
+    .navbar {
+        background-color: #6f4528;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+
+    .navbar a {
+        float: left;
+        color: #ffffff;
+        text-align: center;
+        padding: 22px 26px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background-color: #8b5e3c;
+    }
+
+    /* Page spacing under navbar */
+    .content {
+        padding-top: 110px;
+        width: 85%;
+        margin: auto;
+    }
+
+    h1 {
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    h2 a {
+        color: #6f4528;
+        text-decoration: none;
+    }
+
+    h2 a:hover {
+        text-decoration: underline;
+    }
+
+    h3 {
+        font-weight: normal;
+        color: #5a4a42;
+        line-height: 1.6;
+    }
+
+    hr {
+        border: none;
+        height: 2px;
+        background: #cbb8a9;
+        margin: 60px 0;
+    }
+
+    img {
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
 </style>
+</head>
 
+<body>
 
+<div class="navbar">
+    <a href="index.html">Home</a>
+</div>
 
 
 
@@ -209,6 +260,7 @@
     </div>
 </body>
 </html>
+
 
 
 
