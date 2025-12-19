@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Interactive Directory</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
         body {
             font-family: "Georgia", serif;
@@ -14,8 +15,33 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            padding-top: 140px; /* space below navbar */
         }
 
+        /* NAVBAR */
+        .navbar {
+            background-color: #6f4528;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            color: #ffffff;
+            text-align: center;
+            padding: 22px 26px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #8b5e3c;
+        }
+
+        /* MAIN CONTAINER */
         .container {
             text-align: center;
             background: #ffffff;
@@ -24,7 +50,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             max-width: 900px;
             width: 90%;
-            margin: 40px 0;
         }
 
         h1 {
@@ -35,22 +60,26 @@
 
         h4 {
             font-size: 1.2rem;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             color: #5a4a42;
         }
 
+        /* SEARCH */
         .search-bar {
             margin-bottom: 30px;
         }
 
-        .search-bar input, .search-bar select {
+        .search-bar input,
+        .search-bar select {
             padding: 12px 15px;
             font-size: 1rem;
-            margin: 0 5px 10px 0;
             border-radius: 8px;
             border: 1px solid #ccc;
+            margin: 0 5px 10px 0;
+            font-family: "Georgia", serif;
         }
 
+        /* RESOURCE GRID */
         #resourceList {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -58,6 +87,7 @@
         }
 
         .resource {
+            font-family: "Georgia", serif;
             background: linear-gradient(135deg, #8b5e3c, #6f4528);
             padding: 25px;
             border-radius: 14px;
@@ -70,10 +100,12 @@
 
         .resource h2 a {
             text-decoration: none;
-            color: #fff;
+            color: #ffffff;
             font-size: 1.3rem;
+            font-family: "Georgia", serif;
         }
 
+        /* TOOLTIP */
         .tooltip-text {
             visibility: hidden;
             opacity: 0;
@@ -92,6 +124,7 @@
             line-height: 1.4;
             transition: opacity 0.3s ease, visibility 0.3s ease;
             z-index: 10;
+            font-family: "Georgia", serif;
         }
 
         .tooltip-text::after {
@@ -116,6 +149,7 @@
             background: linear-gradient(135deg, #9c6a44, #7b4b2b);
         }
 
+        /* MOBILE */
         @media (max-width: 800px) {
             #resourceList {
                 grid-template-columns: 1fr;
@@ -123,7 +157,13 @@
         }
     </style>
 </head>
+
 <body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+    </div>
+
     <div class="container">
         <h1>Interactive Directory</h1>
         <h4>Search Programs Here</h4>
@@ -148,30 +188,37 @@
                 <h2><a href="EP.html">Environmental Projects</a></h2>
                 <div class="tooltip-text">Programs that help preserve land or the environment.</div>
             </div>
+
             <div class="resource" data-category="Food">
                 <h2><a href="FoodServices.html">Food Services</a></h2>
                 <div class="tooltip-text">Programs that offer food support or help reduce food loss.</div>
             </div>
+
             <div class="resource" data-category="Grants">
                 <h2><a href="GrantMake.html">Grantmaking Organizations</a></h2>
                 <div class="tooltip-text">Groups that give money to support specific causes.</div>
             </div>
+
             <div class="resource" data-category="History">
                 <h2><a href="history.html">History</a></h2>
                 <div class="tooltip-text">Programs that help preserve history.</div>
             </div>
+
             <div class="resource" data-category="Housing">
                 <h2><a href="HousingS.html">Housing Support</a></h2>
                 <div class="tooltip-text">Programs that help find, keep, or build affordable housing.</div>
             </div>
+
             <div class="resource" data-category="Support">
-                <h2><a href="CommunityHuman.html">Human Services/ Community Support</a></h2>
+                <h2><a href="CommunityHuman.html">Human Services / Community Support</a></h2>
                 <div class="tooltip-text">Programs that improve well-being or meet basic needs.</div>
             </div>
+
             <div class="resource" data-category="MH">
                 <h2><a href="MHSupport.html">Mental Health Support</a></h2>
                 <div class="tooltip-text">Services for emotional, psychological, and mental well-being.</div>
             </div>
+
             <div class="resource" data-category="Youth">
                 <h2><a href="YouthS.html">Youth and Senior Support</a></h2>
                 <div class="tooltip-text">Groups that help youth develop life skills or support senior citizens.</div>
@@ -198,6 +245,7 @@
             });
         }
     </script>
+
 </body>
 </html>
 
